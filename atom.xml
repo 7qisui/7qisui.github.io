@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://7qisui.github.io</id>
+    <title>7qisui</title>
+    <updated>2023-11-19T05:24:57.105Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://7qisui.github.io"/>
+    <link rel="self" href="https://7qisui.github.io/atom.xml"/>
+    <subtitle>7qisui</subtitle>
+    <logo>https://7qisui.github.io/images/avatar.png</logo>
+    <icon>https://7qisui.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, 7qisui</rights>
+    <entry>
+        <title type="html"><![CDATA[解决eNSP路由器打开命令行界面（CLI）一直输出“###”的问题]]></title>
+        <id>https://7qisui.github.io/post/jie-jue-ensp-lu-you-qi-da-kai-ming-ling-xing-jie-mian-cliyi-zhi-shu-chu-de-wen-ti/</id>
+        <link href="https://7qisui.github.io/post/jie-jue-ensp-lu-you-qi-da-kai-ming-ling-xing-jie-mian-cliyi-zhi-shu-chu-de-wen-ti/">
+        </link>
+        <updated>2023-11-13T11:51:02.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>问题</strong>：路由器“成功”启动，但是进入CLI之后，界面一直输出“###”，不能输入命令<br>
+<img src="https://7qisui.github.io/post-images/1699876351911.png" alt="" loading="lazy"><br>
+<strong>解决方法</strong>：打开网络与共享中心-&gt;更改适配器设置-&gt;VIrtualbox Host-only network-&gt;IPV4属性-&gt;设置为192.168.56.1 , 255.255.255.0。<br>
+<img src="https://7qisui.github.io/post-images/1699876423651.png" alt="" loading="lazy"></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>问题</strong>：路由器“成功”启动，但是进入CLI之后，界面一直输出“###”，不能输入命令<br>
+<img src="https://7qisui.github.io/post-images/1699876351911.png" alt="" loading="lazy"><br>
+<strong>解决方法</strong>：打开网络与共享中心-&gt;更改适配器设置-&gt;VIrtualbox Host-only network-&gt;IPV4属性-&gt;设置为192.168.56.1 , 255.255.255.0。<br>
+<img src="https://7qisui.github.io/post-images/1699876423651.png" alt="" loading="lazy"></p>
+<!-- more -->
+<p><strong>第二个问题</strong>：VIrtualbox Host-only network-&gt;IPV4属性-&gt;设置为192.168.56.1 , 255.255.255.0设置失败！！！<br>
+<img src="https://7qisui.github.io/post-images/1699876704156.png" alt="" loading="lazy"><br>
+无论怎么设置，点击确认后再次打开仍然空白，所以说明此ip地址被占用了，在cmd中使用ipconfig来调查是谁占用了此地址，然后将其禁用，再次重复配置VIrtualbox Host-only network-&gt;IPV4属性-&gt;设置为192.168.56.1 , 255.255.255.0，这次就成功配置。</p>
+<!-- more -->
+<p><strong>强调</strong> ：VIrtualbox Host-only network的IP地址一定是192.168.56.1 /24</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用VirtualBox打开虚拟机报错]]></title>
+        <id>https://7qisui.github.io/post/shi-yong-virtualbox-da-kai-xu-ni-ji-bao-cuo/</id>
+        <link href="https://7qisui.github.io/post/shi-yong-virtualbox-da-kai-xu-ni-ji-bao-cuo/">
+        </link>
+        <updated>2023-11-10T14:00:43.000Z</updated>
+        <content type="html"><![CDATA[<p>报错界面如下：<br>
+<img src="https://7qisui.github.io/post-images/1699624973471.png" alt="" loading="lazy"><br>
+为了使VirtualBox能够启动虚拟机，必须在Windows中关闭Hyper-V。<br>
+1、检查Hyper-V设置<br>
+管理员模式启动cmd，输入命令：<br>
+<code>bcdedit</code><br>
+执行后看到 hypervisorlaunchtype值为‘Auto’：<br>
+<img src="https://7qisui.github.io/post-images/1699625122234.png" alt="" loading="lazy"><br>
+2、关闭 hypervisorlaunchtype<br>
+管理员身份cmd下执行命令：<br>
+<code>bcdedit / set hypervisorlaunchtype off</code><br>
+重启计算机。<br>
+注意：一定要重启，不能关闭后再开启。<br>
+此方法使用后虽然可以打开VirtualBox，但影响了系统其他功能，如蓝牙连接、热点连接等(暂未发现)。<br>
+3、启用 hypervisorlaunchtype<br>
+Windows的Docker需要Hyper-V提供的硬件虚拟化，需要启用 hypervisorlaunchtype，同样运行如下命令：<br>
+<code>bcdedit /set hypervisorlaunchtype auto</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[习概缺课]]></title>
+        <id>https://7qisui.github.io/post/index4/</id>
+        <link href="https://7qisui.github.io/post/index4/">
+        </link>
+        <updated>2023-10-31T07:43:47.000Z</updated>
+        <content type="html"><![CDATA[<p>第一，这个习概老师很煞笔。🙁<br>
+第二，这个习概老师很煞笔。😠<br>
+第三，这个习概老师很煞笔。😡<br>
+事情如下：<br>
+习近平新时代中国特色社会主义思想概要这门课虽然是作为必修，但是由于老师无趣以及十分生硬的念ppt，导致班级很多人都不来听课，所以课程越到后面人来的越少。<br>
+而我，是个另外，我前面的所有课程都保证了全勤，只因为我不想逃课。但是上节课那么少人，老师都不点名，于是下节课是一堂演讲课，我又不演讲，所以我想着就不去了。<br>
+结果！！！老师发布了课堂签到，于是我缺勤0分。不是，她真的有大病，好好上课你不点名，演讲课你来这一套，我真服了。😓<br>
+现在给我的感觉就是，玛德老子上了十几节课你不签到，就一次没去你来个签到点名，真的谢特。<br>
+真的沙杯。。。😓😓😓</p>
+<div style="float:left"><img height="100" width= "200" src="file://C:/Users/qisui/Nutstore/1/我的坚果云/Gridea/post-images/1698738839156.jpg"></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[学风建设会]]></title>
+        <id>https://7qisui.github.io/post/xue-feng-jian-she-hui/</id>
+        <link href="https://7qisui.github.io/post/xue-feng-jian-she-hui/">
+        </link>
+        <updated>2023-10-25T12:22:56.000Z</updated>
+        <content type="html"><![CDATA[<p>应张老师要求，今天我开展了班级的学风建设会，然后在我的提议下，班长郭禹颉也决定将班级的习概小班讨论一并进行，取消线上会议。<br>
+当然，ppt我是懒得做的😂，就做了两张封面（用来拍照），然后我准备了几个小标题写在了黑板上，用来充分我的讲说😇。教室是张老师帮忙借的，感谢张老师又一次为我服务。然后因为小班讨论的原因，班级里来的人比较多，我简单就着班级的问题展开了一些介绍和一些总结。小班讨论的内容就不展开说了，大家基本上就随便讲两句就结束了，打分也是我与班长团支书打分。<br>
+具体的图片我这里还没有收到，等后面刘春琳同学发出来我将其放在这个里面来当作纪念。🤗<br>
+还有想说的就是，在教室里学习是真的很累很累，一点学习动力都没有，也有可能是和我的今天的状态有关系，看书根本看不下去，还有就是，为什么抹香鲸的敲键盘声音这么大，把累的睡着了的我硬生生的敲醒了。索性直接不干了，我直接打包回府了。🙁☹️😣😖😫😩😤😠😡<br>
+另外提一下，今天上午十点之前交考勤表和考试承诺书，我直接狂干15份考勤表和5份考试承诺书。催的太急了，不知道是张老师催的还是学校催的，特别急。😭<br>
+<img src="https://7qisui.github.io/post-images/1698239888403.jpg" alt="" loading="lazy"></p>
+<p><strong>昨天爆肝的考试承诺书</strong>：<br>
+<img src="https://7qisui.github.io/post-images/1698237811270.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[心理普测]]></title>
+        <id>https://7qisui.github.io/post/index2/</id>
+        <link href="https://7qisui.github.io/post/index2/">
+        </link>
+        <updated>2023-10-23T08:33:45.000Z</updated>
+        <content type="html"><![CDATA[<p>在若干天之前，学校要求我们在今日校园上填写心理普测，本着学校肯定又是糊弄了事，所以我认真填了填。按照正常逻辑，这种普测肯定草草了事，但我当时的确认真看了看。<br>
+填完后我也没有多在意，好些天过去后我更是把这件事情忘到九霄云外，但今天张老师把我叫到办公室又重新拉开了这件事情的帷幕。<br>
+我是真的没想到张老师如此用心，按正常来说大多数辅导员也是跟着学校要求走，完成工作就结束。但张老师的确是认真看了我的心理普测。于是张老师把我叫到办公室与我进行细心谈话，聊了很多东西，也谈论了很多。<strong>注意</strong>，在此期间，有好几位同学来找张老师有事，有的是来送文件资料，有的是咨询东西，但是都被张老师回绝了，让他们在门口先等一下。明显是照顾了我的谈话和我的情绪，老师真的是细致入微，认真负责。🤗😘<br>
+老师希望我抽时间联系一下学校的心理咨询室那边的老师，给我说了电话。等过两天有时间，我去一趟测试测试，看看是不是我想的一样。<br>
+写这篇文章的目的就是记录一下今天的事情，从来没有老师这么细致入微的询问和了解我的心理方面的事情，也许是因为我平时比较活泼，开朗。😊<img src="https://7qisui.github.io/post-images/1698051794718.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[昨日的总结]]></title>
+        <id>https://7qisui.github.io/post/index01/</id>
+        <link href="https://7qisui.github.io/post/index01/">
+        </link>
+        <updated>2023-10-22T23:49:11.000Z</updated>
+        <content type="html"><![CDATA[<p>date:  2023.10.23 8:09<br>
+一开始我使用的是hexo搭建博客网站，由于有个页面而我很喜欢，于是将那位博主的主题下载了下来，然后按照流程一步一步配置，最后差不多实现了页面上的东西都是自己的东西了。🙂<br>
+然而，hexo的提交方式十分原始，写博客和记录事情都需要对其source文件夹打开操作，实属不便。于是在网络上的资源下和室友的推荐下，我来到了这里，可视化操作的确非常吸引我，所以我丢弃了hexo来到了这里。<br>
+起初我以为两者是互通的，这个只是个客户端工具，但没想到有hexo的存在我链接不上，因此在我将有关hexo的东西全部删除后，再次连接。测试链接成功后，我发现我并不能打开我的博客网站，原因就是因为域名的重定向次数过多，我为了解决这个问题和域名与github.io的绑定问题费了不少功夫。😭<br>
+首先我使用了namecheap提供的免费一年的域名，然后将其绑定到hithub.io上，也就是通过这个域名我就可以相当于直接访问github.io，但是具体的配置我并不是很清楚，从而导致一直出错。😭<br>
+后来我发现网络教程上的，在github.io仓库的设置里输入域名，进行绑定，我的一直检测出错，我的域名好像有什么问题，应该是不安全（我觉得也是，我的域名也没实名认证啥的）。所以我直接在github.io仓库首页的Edit repository details添加我的域名（可能也没啥作用，就是个显示效果），然后在namecheap中的DSA中屡次调节，最后搞得差不多了。😊<br>
+调节后的截图：<br>
+<img src="https://7qisui.github.io/post-images/1698019555466.png" alt="" loading="lazy"><br>
+最后的问题就是Gridea的上传同步问题，速度太慢，多次失败，这个目前我的总结还是多看运气，少部分看网速。😤😤😤<br>
+最后的最后，昨天确实花费很长时间，人累心也累。😭😭😭</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于&介绍]]></title>
+        <id>https://7qisui.github.io/post/about/</id>
+        <link href="https://7qisui.github.io/post/about/">
+        </link>
+        <updated>2023-10-22T17:07:54.000Z</updated>
+        <content type="html"><![CDATA[<hr>
+<h2 id="title-关于介绍date-2023-10-23-000948">title: 关于&amp;介绍<br>
+date: 2023-10-23 00:09:48</h2>
+<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="关于本站">🏠 关于本站</h2>
+<p>本站是我经历千辛万苦找到的比较满意的一个静态网站。<br>
+用来写写文章，做做笔记，记录每天日程安排。</p>
+<h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<p>本人，陈宇璐，03年生。<br>
+合肥工业大学在读，平时喜欢乒乓和绘画。<br>
+计算机学子一枚，有计算机相关的东西都可以来和我分享。</p>
+<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<p>吃，睡，玩全占，就是不爱学习。</p>
+<h2 id="联系我呀">📬 联系我呀</h2>
+<p>QQ：2776502384<br>
+tel: 15385799717<br>
+github: <a href="https://github.com/7qisui">https://github.com/7qisui</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[你好，世界！]]></title>
+        <id>https://7qisui.github.io/post/index/</id>
+        <link href="https://7qisui.github.io/post/index/">
+        </link>
+        <updated>2023-10-22T16:01:01.000Z</updated>
+        <content type="html"><![CDATA[<p>这是我的第一篇文章，费劲了千辛万苦，最后才走到了这里。😭<br>
+明天我将对此历程做个总结。😇<br>
+<img src="https://7qisui.github.io/post-images/1697993312167.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+</feed>

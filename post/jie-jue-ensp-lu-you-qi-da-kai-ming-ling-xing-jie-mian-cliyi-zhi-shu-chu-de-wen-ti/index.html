@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>解决eNSP路由器打开命令行界面（CLI）一直输出“###”的问题 | 7qisui</title>
+<meta name="description" content="7qisui">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://7qisui.github.io/favicon.ico?v=1700371495798">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://7qisui.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://7qisui.github.io">7qisui</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>解决eNSP路由器打开命令行界面（CLI）一直输出“###”的问题</h1>
+            <p class="article-meta">
+              2023-11-13
+              
+                <a href="https://7qisui.github.io/tag/mJdhH1xqW/" class="badge secondary">
+                  计算机
+                </a>
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <p><strong>问题</strong>：路由器“成功”启动，但是进入CLI之后，界面一直输出“###”，不能输入命令<br>
+<img src="https://7qisui.github.io/post-images/1699876351911.png" alt="" loading="lazy"><br>
+<strong>解决方法</strong>：打开网络与共享中心-&gt;更改适配器设置-&gt;VIrtualbox Host-only network-&gt;IPV4属性-&gt;设置为192.168.56.1 , 255.255.255.0。<br>
+<img src="https://7qisui.github.io/post-images/1699876423651.png" alt="" loading="lazy"></p>
+<!-- more -->
+<p><strong>第二个问题</strong>：VIrtualbox Host-only network-&gt;IPV4属性-&gt;设置为192.168.56.1 , 255.255.255.0设置失败！！！<br>
+<img src="https://7qisui.github.io/post-images/1699876704156.png" alt="" loading="lazy"><br>
+无论怎么设置，点击确认后再次打开仍然空白，所以说明此ip地址被占用了，在cmd中使用ipconfig来调查是谁占用了此地址，然后将其禁用，再次重复配置VIrtualbox Host-only network-&gt;IPV4属性-&gt;设置为192.168.56.1 , 255.255.255.0，这次就成功配置。</p>
+<!-- more -->
+<p><strong>强调</strong> ：VIrtualbox Host-only network的IP地址一定是192.168.56.1 /24</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://7qisui.github.io/post/shi-yong-virtualbox-da-kai-xu-ni-ji-bao-cuo/">
+                <h3 class="post-title">
+                  使用VirtualBox打开虚拟机报错
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://7qisui.github.io/images/avatar.png?v=1700371495798" class="no-responsive avatar">
+    <div class="text-muted">7qisui</div>
+    <div class="social-container">
+      
+        
+          <a href="https://github.com/7qisui" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://7qisui.github.io/post/jie-jue-ensp-lu-you-qi-da-kai-ming-ling-xing-jie-mian-cliyi-zhi-shu-chu-de-wen-ti/">解决eNSP路由器打开命令行界面（CLI）一直输出“###”的问题</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://7qisui.github.io/post/shi-yong-virtualbox-da-kai-xu-ni-ji-bao-cuo/">使用VirtualBox打开虚拟机报错</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://7qisui.github.io/post/index4/">习概缺课</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://7qisui.github.io/post/xue-feng-jian-she-hui/">学风建设会</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://7qisui.github.io/post/index2/">心理普测</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://7qisui.github.io/post/index01/">昨日的总结</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://7qisui.github.io/post/about/">关于&amp;介绍</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://7qisui.github.io/post/index/">你好，世界！</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://7qisui.github.io/tag/mJdhH1xqW/" class="badge secondary">
+          计算机
+        </a>
+      
+        <a href="https://7qisui.github.io/tag/teFsvBi3r/" class="badge success">
+          笔记
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://7qisui.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>
